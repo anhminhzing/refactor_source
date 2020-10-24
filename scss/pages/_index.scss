@@ -1,0 +1,12 @@
+// index page
+.listMainContent{
+    width: 100%;
+    padding: $pd-1;
+    text-align: center;
+    ul{
+        list-style: none;
+        li{
+            margin-bottom: $mg-1;
+        }
+    }
+}

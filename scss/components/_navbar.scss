@@ -1,0 +1,115 @@
+.navbar {
+  background: $color-white !important;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 100;
+  transition: 0.5s all;
+  padding: 0;
+ 
+  .navbar-brand {
+    padding: 20px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      position: initial;
+      .nav-link {
+        padding: $pd-3;
+        font-size: $fs-1;
+        color: $color-black;
+        &.dropdown-toggle {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.sticky{
+    box-shadow: 0 1px 2px 0 $color-black-blur,
+                0 0px 8px 4px $color-black-blur;
+    animation: fadeIn 0.5s ;           
+
+  }
+
+  &.down {
+    box-shadow: 1px 4px 6px 0px #dedddd94;
+    transform: translateY(0px);
+  }
+  &.up {
+    transform: translateY(-200px);
+  }
+}
+
+// dropdown menu
+.menu_list {
+  .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    left: 50%;
+    width: 80%;
+    margin-top: -10px;
+    transform: translateX(-50%) translateY(20px);
+    transition: all 0.3s;
+    box-shadow: 0 3px 5px 0px  $color-black-blur;
+    border: 1px solid $color-white;            
+    li.dropdown-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0;
+      background: $color-white !important;
+      .single-menu-list {
+        padding: 0 50px;
+        @include respond-with-maxWidth("medium") {
+          padding: 0 20px;
+        }
+        @include respond-with-maxWidth("large") {
+          padding: 0 0px;
+        }
+        ul {
+          list-style: none;
+          li {
+            p {
+              font-weight: $fw-bold;
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-with-maxWidth("medium") {
+      width: 90%;
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+
+    }
+
+    @include respond-with-minWidth("medium") {
+      display: block;
+    }
+  
+  }
+  &:hover {
+    .dropdown-menu {
+      @include respond-with-minWidth("small") {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0px);
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 400px;
+}

@@ -1,0 +1,14 @@
+.arrow_down {
+  width: 100%;
+  text-align: center;
+  margin-bottom: $mg-6;
+  i {
+    font-size: $fs-4;
+    animation-name: translateUpArrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    cursor: pointer;
+  }
+}
