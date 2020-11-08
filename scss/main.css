@@ -5,18 +5,8 @@
   scroll-behavior: smooth;
   box-sizing: border-box !important; }
 
-@font-face {
-  font-family: "Roboto Mono";
-  src: url("../font/RobotoMono-Regular.ttf"); }
-@font-face {
-  font-family: "Roboto Mono lighter";
-  src: url("../font/RobotoMono-Thin.ttf"); }
-@font-face {
-  font-family: "Roboto Mono bold";
-  src: url("../font/RobotoMono-Bold.ttf"); }
 html,
 body {
-  font-family: "Roboto Mono" !important;
   position: relative; }
 
 .padding-0 {
@@ -67,20 +57,25 @@ body {
     left: 0; }
   to {
     left: 100%; } }
-.button {
-  outline: none;
-  box-shadow: none;
-  border: none;
-  cursor: pointer; }
-  .button:focus {
-    outline: none; }
+.button_page {
+  background-color: white; }
+  .button_page .button_mainContent {
+    padding: 10px; }
+    .button_page .button_mainContent .button {
+      outline: none;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+      margin-right: 30px; }
+      .button_page .button_mainContent .button:focus {
+        outline: none; }
 
 .button_type1 {
   background: white;
   border-radius: 0;
   position: relative; }
   .button_type1 .borderAnimation {
-    border: 2px solid #8080803d;
+    border: 2px solid #999;
     padding: 20px; }
     .button_type1 .borderAnimation::before, .button_type1 .borderAnimation::after {
       content: "";
@@ -136,10 +131,10 @@ body {
     transition-duration: 0.5s;
     transition-property: transform;
     z-index: -1;
-    background-color: #ff7070; }
+    background-color: #ff4d4d; }
   .button_type2:hover {
-    background-color: #ff7070;
-    border: 1px solid #ff7070; }
+    background-color: #ff4d4d;
+    border: 1px solid #ff4d4d; }
     .button_type2:hover span {
       color: white; }
     .button_type2:hover::before {
@@ -147,6 +142,42 @@ body {
     .button_type2:hover::after {
       transform: scaleX(1);
       transform-origin: left; }
+
+.button_type3 {
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  height: 50px;
+  background: orange;
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: all 0.6s; }
+  .button_type3 span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: black;
+    font-weight: 500; }
+  .button_type3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 0%;
+    height: 100%;
+    background: white;
+    z-index: 1;
+    transform: skew(50deg);
+    transition-duration: .6s; }
+  .button_type3:hover {
+    background: orange; }
+    .button_type3:hover::after {
+      width: 150%; }
+    .button_type3:hover span {
+      color: black; }
 
 .navbar {
   background: white !important;
@@ -227,234 +258,70 @@ body {
   overflow-x: hidden;
   max-height: 400px; }
 
-.loading_screen {
+.cardHover_page {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 10px 0; }
+
+.cardHover_general {
+  width: 300px;
+  height: 400px; }
+
+.cardHover_type1 {
   width: 100%;
-  height: 100vh;
-  background: black;
-  z-index: 9999;
-  transition: 0.5s ease-in-out;
-  position: absolute; }
-  .loading_screen .white_line {
+  position: relative;
+  overflow: hidden; }
+  .cardHover_type1 .backgroundImage {
     position: absolute;
-    top: 45%;
-    left: 0%;
-    width: 0%;
-    height: 3px;
-    background: white;
-    animation-name: opacityAnimation;
-    animation-duration: 0.5s;
-    animation-delay: 2500ms;
-    animation-fill-mode: forwards; }
-  .loading_screen .center {
+    top: 0;
+    left: 0; }
+    .cardHover_type1 .backgroundImage img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover; }
+  .cardHover_type1 .content {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
-    .loading_screen .center .percent {
-      color: white;
-      font-size: 32px;
-      animation-name: opacityAnimation;
-      animation-duration: 0.5s;
-      animation-delay: 2500ms;
-      animation-fill-mode: forwards; }
-
-.main_content {
-  position: relative;
-  width: 100%;
-  height: 100vh; }
-
-.panel_wrapper {
-  width: 100%;
-  margin-top: 40px;
-  position: relative; }
-  .panel_wrapper .row {
-    margin: 0; }
-  .panel_wrapper .panel {
-    width: 100%;
-    height: 800px;
-    position: relative; }
-    .panel_wrapper .panel .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center; }
-      .panel_wrapper .panel .content h2 {
-        overflow: hidden;
-        display: inline-block;
-        margin-bottom: 30px;
-        font-size: 40px;
-        font-family: "Roboto Mono bold" !important; }
-      .panel_wrapper .panel .content .buttonWrap {
-        width: 100%;
-        height: 80px;
-        position: relative; }
-        .panel_wrapper .panel .content .buttonWrap .animationText {
-          transform: translate(-50%, -50%);
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          display: inline; }
-          .panel_wrapper .panel .content .buttonWrap .animationText::before {
-            z-index: 99; }
-    .panel_wrapper .panel .animation_shape {
-      width: 100%;
-      height: 100%;
-      position: relative; }
-      .panel_wrapper .panel .animation_shape img {
-        position: absolute;
-        z-index: -1; }
-        .panel_wrapper .panel .animation_shape img:nth-child(1) {
-          top: 27%;
-          left: 15%; }
-        .panel_wrapper .panel .animation_shape img:nth-child(2) {
-          left: 30%;
-          bottom: 20%; }
-        .panel_wrapper .panel .animation_shape img:nth-child(3) {
-          top: 30%;
-          left: 60%; }
-        .panel_wrapper .panel .animation_shape img:nth-child(4) {
-          top: 50%;
-          left: 75%; }
-        .panel_wrapper .panel .animation_shape img:nth-child(5) {
-          left: 20%;
-          bottom: 35%; }
-        .panel_wrapper .panel .animation_shape img:nth-child(6) {
-          left: 75%;
-          bottom: 15%; }
-        .panel_wrapper .panel .animation_shape img:nth-child(7) {
-          left: 65%;
-          bottom: 20%; }
-
-.arrow_down {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 100px; }
-  .arrow_down i {
-    font-size: 30px;
-    animation-name: translateUpArrow;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    cursor: pointer; }
-
-.portfolio {
-  width: 100%;
-  margin-bottom: 100px; }
-  .portfolio .row {
-    margin: 0; }
-  .portfolio .portfolio_item {
-    margin: 5px;
-    overflow: hidden;
-    position: relative; }
-    .portfolio .portfolio_item img {
-      width: 100%;
-      zoom: 0;
-      transition: 0.5s all; }
-      .portfolio .portfolio_item img:hover {
-        transform: scale(1.1); }
-    .portfolio .portfolio_item::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: transparent;
-      transition: 0.5s all;
-      z-index: 1; }
-    .portfolio .portfolio_item .content {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    pointer-events: none;
+    z-index: 2; }
+    .cardHover_type1 .content .content_body {
       text-align: center;
-      z-index: 2; }
-      .portfolio .portfolio_item .content p {
-        text-align: left;
-        margin-bottom: 5px;
-        color: white;
-        overflow: hidden; }
-        .portfolio .portfolio_item .content p span {
-          transition: 0.6s all;
-          transform: translateY(100px);
-          display: inline-block; }
-        .portfolio .portfolio_item .content p:nth-child(1) span {
-          font-family: "Roboto Mono bold" !important;
-          font-size: 20px; }
-        .portfolio .portfolio_item .content p:nth-child(2) span {
-          font-size: 16px; }
-    .portfolio .portfolio_item:hover img {
-      transform: scale(1.1); }
-    .portfolio .portfolio_item:hover::after {
-      background-color: rgba(255, 112, 112, 0.9) !important; }
-    .portfolio .portfolio_item:hover .content p span {
-      transform: translateY(0px); }
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: .5s; }
+      .cardHover_type1 .content .content_body h2 {
+        font-size: bold; }
+  .cardHover_type1 span {
+    position: absolute;
+    display: block;
+    transition: 0.5s;
+    border-radius: 50%;
+    background: #ff4d4d;
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s; }
+  .cardHover_type1:hover .content .content_body {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px); }
+  .cardHover_type1:hover span {
+    width: 1500px;
+    height: 1500px; }
 
-.carousel {
+.listMainContent {
   width: 100%;
-  margin-bottom: 50px; }
-  .carousel h2 {
-    width: 90%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 50px;
-    font-weight: bold; }
-  .carousel .owl-carousel .item {
-    width: 206px;
-    height: 90px;
-    display: flex;
-    align-items: center; }
-    .carousel .owl-carousel .item img {
-      max-width: 135px;
-      margin: 0 auto; }
-
-.contact-section {
-  width: 100%;
-  background-color: #051441;
-  color: white;
-  padding: 4% 0;
-  margin-bottom: 100px;
-  position: relative; }
-  .contact-section img {
-    position: absolute; }
-    .contact-section img:nth-child(1) {
-      left: 0px;
-      top: 50%; }
-    .contact-section img:nth-child(2) {
-      right: 0px;
-      top: 50%; }
-  .contact-section .container .row {
-    margin: 0; }
-    .contact-section .container .row .content {
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      position: relative; }
-      .contact-section .container .row .content h2 {
-        font-weight: bold;
-        margin-bottom: 50px; }
-
-.footer {
-  width: 100%;
-  margin-bottom: 50px; }
-  .footer .logo {
-    width: 50px;
-    height: 50px; }
-    .footer .logo img {
-      width: 100%; }
-  .footer .social-media {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; }
-    .footer .social-media a i {
-      color: grey;
-      margin-left: 40px; }
-    .footer .social-media a:hover {
-      text-decoration: none !important;
-      color: grey; }
+  padding: 10px;
+  text-align: center; }
+  .listMainContent ul {
+    list-style: none; }
+    .listMainContent ul li {
+      margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -114,3 +114,42 @@
     }
   }
 }
+
+// button type 3
+.button_type3{
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background: orange;
+  transition: all 0.6s;
+  text-align: center;
+  span{
+    position: relative;
+    z-index:2;
+    color: $color-black;
+    font-weight: 500;
+    transition: all 0.6s;
+  }
+  &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -25%;
+      width: 0%;
+      height: 100%;
+      background: $color-black;
+      z-index: 1;
+      transform: skew(50deg);
+      transition-duration: .6s;
+  }
+  &:hover{
+      background: orange;
+      &::after{
+          width: 150%;
+      }
+      span{
+          color: $color-white;
+      }
+  }
+
+}
