@@ -1,0 +1,62 @@
+body{
+    // https://www.svgbackgrounds.com/#liquid-cheese
+    background-color: #ffaa00;
+    background-image: url('../../images/scoll_image/Liquid-Cheese.svg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    row-gap: 0%;
+    column-gap: 10%;
+    
+    // Fixed positioned, so it won't be affected by default scroll
+    // It will be moved using `transform`, to achieve a custom scroll behavior
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+
+    .image{
+        // avatar from: https://unsplash.com/
+        position: relative;
+        width: 300px;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:nth-child(2n) {
+            justify-self: start;
+        }
+        @for $i from 1 to 11 {
+            &:nth-child(#{$i}){
+                background-image: url('../../images/scoll_image/avatar#{$i}.jpg');
+            }
+        }
+    }
+   
+}
+@media screen and (max-width: 760px) {
+    .container {
+      // 1 column grid
+      grid-template-columns: 1fr;
+      // Fix image centering
+      justify-items: center;
+    }
+  
+    // Fix image centering
+    .image:nth-child(2n) {
+      justify-self: center;
+    }
+}
+
+// the fake scroll is an element to make the page scrollable
+// Will be setted a proper `height` value using Javascript
+.fake-scroll {
+    position: absolute;
+    top: 0;
+    width: 1px;
+}

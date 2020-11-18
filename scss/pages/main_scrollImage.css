@@ -1,0 +1,58 @@
+body {
+  background-color: #ffaa00;
+  background-image: url("images/Liquid-Cheese.svg");
+  background-attachment: fixed;
+  background-size: cover; }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: end;
+  row-gap: 0%;
+  column-gap: 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .container .image {
+    position: relative;
+    width: 300px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .container .image:nth-child(2n) {
+      justify-self: start; }
+    .container .image:nth-child(1) {
+      background-image: url("../../images/scoll_image/avatar1.jpg"); }
+    .container .image:nth-child(2) {
+      background-image: url("../../images/scoll_image/avatar2.jpg"); }
+    .container .image:nth-child(3) {
+      background-image: url("../../images/scoll_image/avatar3.jpg"); }
+    .container .image:nth-child(4) {
+      background-image: url("../../images/scoll_image/avatar4.jpg"); }
+    .container .image:nth-child(5) {
+      background-image: url("../../images/scoll_image/avatar5.jpg"); }
+    .container .image:nth-child(6) {
+      background-image: url("../../images/scoll_image/avatar6.jpg"); }
+    .container .image:nth-child(7) {
+      background-image: url("../../images/scoll_image/avatar7.jpg"); }
+    .container .image:nth-child(8) {
+      background-image: url("../../images/scoll_image/avatar8.jpg"); }
+    .container .image:nth-child(9) {
+      background-image: url("../../images/scoll_image/avatar9.jpg"); }
+    .container .image:nth-child(10) {
+      background-image: url("../../images/scoll_image/avatar10.jpg"); }
+
+@media screen and (max-width: 760px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center; }
+
+  .image:nth-child(2n) {
+    justify-self: center; } }
+.fake-scroll {
+  position: absolute;
+  top: 0;
+  width: 1px; }
+
+/*# sourceMappingURL=main_scrollImage.css.map */
