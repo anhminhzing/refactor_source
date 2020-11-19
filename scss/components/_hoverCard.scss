@@ -7,14 +7,13 @@
 }
 
 .cardHover_general{
-    width: 300px;
     height: 400px;
+    background: linear-gradient(45deg, #ff89e9 0%,#05abe0 100%);
 }
 
 
 //--------- end custome page hover card ---------
 .cardHover_type1{
-    width: 100%;
     position: relative;
     overflow: hidden;
     .backgroundImage{
@@ -75,4 +74,163 @@
     }
 }
 
+// Apolo
+.Apolo{
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+    }
+    &::before{
+        background-color: $color-blue-blur;
+        opacity: 0;
+        z-index: 1;
+    }
+    &::after{
+        z-index: 2;
+        background-image: url('../../images/hovercard/hoverCard1.jpeg');
+        background-repeat: none;
+        background-size: cover;
+        background-position: center center;
+        transform: scale(1);
+    }
+    .content{
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        h3{
+            font-size: $fs-4;
+            font-weight: $fw-lighter;
+            margin: $mg-2;
+            span{
+                font-size: $fs-4;
+                font-weight: $fw-bold;
+            }
+        }
+        p{
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 34%;
+            padding-right: $pd-4;
+            border-right: 5px solid $color-white;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    }
+    span.animation{
+        display: inline-block;
+        width: 100%;
+        height: 300%;
+        background-color: $color-white;
+        opacity: 0.4;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        transform: rotate(-45deg) translateX(-300px);
+        transition: all 1s;
+    }
+    &:hover{
+        &::before{
+            opacity: 0.7;
+            z-index: 2;
+        }
+        &::after{
+            transform: scale(1.1);
+            z-index: 1;
+        }
+        span.animation{
+            transform:rotate(-45deg) translateX(1000px);
+        }
+        .content{
+            p{
+                opacity: 1;
+            }
+        }
+    }
+}
 
+.roxy{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s;
+        height: 100%;
+    }
+    &::before{
+        background: $color-blue-blur;
+        z-index: 1;
+        opacity: 0;
+        width: 100%;
+    }
+    &::after{
+        background-image: url('../../images/hovercard/hoverCard2.jpg');
+        background-repeat: none;
+        background-size: cover;
+        background-position: center;
+        z-index: 2;
+        width: calc(100% + 60px);
+    }
+    h3{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-64%, -50%);
+        z-index: 6;
+        font-weight: $fw-lighter;
+        font-size: $fs-4;
+        width: 60%;
+        span{
+            font-weight: $fw-bold;
+            font-size: $fs-4;
+        }
+    }
+    .content{
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -50%);
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding: $pd-3;
+        opacity: 0;
+        transition: all 0.3s;
+        p{
+            margin-top: $mg-6;
+        }
+        border: 1px solid $color-white;
+    }
+    &:hover{
+        &::before{
+            z-index: 2; 
+            opacity: 0.2;
+        }
+        &::after{
+            z-index: 1;
+            width: calc(100% + 90px);
+        }
+        .content{
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+}

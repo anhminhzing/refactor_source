@@ -260,11 +260,10 @@ body {
   padding: 10px 0; }
 
 .cardHover_general {
-  width: 300px;
-  height: 400px; }
+  height: 400px;
+  background: linear-gradient(45deg, #ff89e9 0%, #05abe0 100%); }
 
 .cardHover_type1 {
-  width: 100%;
   position: relative;
   overflow: hidden; }
   .cardHover_type1 .backgroundImage {
@@ -309,6 +308,136 @@ body {
   .cardHover_type1:hover span {
     width: 1500px;
     height: 1500px; }
+
+.Apolo {
+  height: 400px;
+  position: relative;
+  overflow: hidden; }
+  .Apolo::before, .Apolo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s; }
+  .Apolo::before {
+    background-color: #3498db;
+    opacity: 0;
+    z-index: 1; }
+  .Apolo::after {
+    z-index: 2;
+    background-image: url("../../images/hovercard/hoverCard1.jpeg");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+    transform: scale(1); }
+  .Apolo .content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%; }
+    .Apolo .content h3 {
+      font-size: 30px;
+      font-weight: lighter;
+      margin: 20px; }
+      .Apolo .content h3 span {
+        font-size: 30px;
+        font-weight: bold; }
+    .Apolo .content p {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      width: 34%;
+      padding-right: 4%;
+      border-right: 5px solid white;
+      opacity: 0;
+      transition: opacity 0.3s; }
+  .Apolo span.animation {
+    display: inline-block;
+    width: 100%;
+    height: 300%;
+    background-color: white;
+    opacity: 0.4;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    transform: rotate(-45deg) translateX(-300px);
+    transition: all 1s; }
+  .Apolo:hover::before {
+    opacity: 0.7;
+    z-index: 2; }
+  .Apolo:hover::after {
+    transform: scale(1.1);
+    z-index: 1; }
+  .Apolo:hover span.animation {
+    transform: rotate(-45deg) translateX(1000px); }
+  .Apolo:hover .content p {
+    opacity: 1; }
+
+.roxy {
+  position: relative;
+  overflow: hidden;
+  width: 100%; }
+  .roxy::after, .roxy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    height: 100%; }
+  .roxy::before {
+    background: #3498db;
+    z-index: 1;
+    opacity: 0;
+    width: 100%; }
+  .roxy::after {
+    background-image: url("../../images/hovercard/hoverCard2.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    width: calc(100% + 60px); }
+  .roxy h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-64%, -50%);
+    z-index: 6;
+    font-weight: lighter;
+    font-size: 30px;
+    width: 60%; }
+    .roxy h3 span {
+      font-weight: bold;
+      font-size: 30px; }
+  .roxy .content {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -50%);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid white; }
+    .roxy .content p {
+      margin-top: 100px; }
+  .roxy:hover::before {
+    z-index: 2;
+    opacity: 0.2; }
+  .roxy:hover::after {
+    z-index: 1;
+    width: calc(100% + 90px); }
+  .roxy:hover .content {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
 
 .listMainContent {
   width: 100%;
