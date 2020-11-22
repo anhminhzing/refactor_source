@@ -439,6 +439,83 @@ body {
     transform: translate(-50%, -50%);
     opacity: 1; }
 
+.carousel_page {
+  width: 100%; }
+
+.slick {
+  width: 100%;
+  margin: auto; }
+  @media screen and (max-width: 768px) {
+    .slick {
+      width: 90%; } }
+  .slick .slick_image .slick-arrow {
+    display: none; }
+
+.carouselType1 {
+  background-image: linear-gradient(to bottom, #ffffff, #fafafd 22%, #f5f6fb); }
+  .carouselType1 .wrapper {
+    width: 35%;
+    margin-left: auto !important;
+    margin-right: auto !important; }
+    @media screen and (max-width: 768px) {
+      .carouselType1 .wrapper {
+        width: 80%; } }
+  .carouselType1 .slick-slide {
+    margin-top: 50px !important; }
+  .carouselType1 .slick_image {
+    width: 100%; }
+    .carouselType1 .slick_image .slick-list {
+      min-height: 270px; }
+      @media screen and (max-width: 768px) {
+        .carouselType1 .slick_image .slick-list {
+          min-height: 0px; } }
+    .carouselType1 .slick_image .item {
+      width: 100%;
+      border: 2px solid white;
+      border-radius: 100%;
+      transition: all 0.5s; }
+      .carouselType1 .slick_image .item.slick-center {
+        transform: scale(1.6); }
+    .carouselType1 .slick_image .left-arrow {
+      position: absolute;
+      top: 50%;
+      left: -50px; }
+      @media screen and (max-width: 768px) {
+        .carouselType1 .slick_image .left-arrow {
+          left: -30px; } }
+      @media screen and (max-width: 992px) {
+        .carouselType1 .slick_image .left-arrow {
+          left: -20px; } }
+    .carouselType1 .slick_image .right-arrow {
+      position: absolute;
+      top: 50%;
+      right: -50px; }
+      @media screen and (max-width: 768px) {
+        .carouselType1 .slick_image .right-arrow {
+          right: -30px; } }
+      @media screen and (max-width: 992px) {
+        .carouselType1 .slick_image .right-arrow {
+          left: -20px; } }
+  .carouselType1 .slick_content {
+    width: 90%;
+    margin: auto; }
+    .carouselType1 .slick_content .slick-dots {
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      padding: 0px;
+      width: auto;
+      transform: translateX(-50%); }
+      .carouselType1 .slick_content .slick-dots li {
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #999; }
+        .carouselType1 .slick_content .slick-dots li button::before {
+          content: ''; }
+        .carouselType1 .slick_content .slick-dots li.slick-active {
+          background: #999 !important; }
+
 .listMainContent {
   width: 100%;
   padding: 10px;

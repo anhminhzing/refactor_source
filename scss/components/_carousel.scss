@@ -1,0 +1,105 @@
+// general custom
+.carousel_page{
+    width: 100%;
+}
+
+.carousel_general{
+
+}
+// custom slick ( 1 year ago )
+.slick{
+    width: 100%;
+    margin: auto;
+    @include respond-with-maxWidth ("medium"){
+        width: 90%
+    }
+    .slick_image{
+        .slick-arrow{
+            display: none;
+        }
+    }
+}
+
+
+// type 1: from programing hub
+.carouselType1{
+    background-image: linear-gradient(to bottom, #ffffff, #fafafd 22%, #f5f6fb);
+    .wrapper{
+        width: 35%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        @include respond-with-maxWidth ("medium"){
+            width: 80%
+        }
+    }
+   
+    .slick-slide{
+        margin-top: 50px !important;
+    }
+    .slick_image{
+        width: 100%;
+        .slick-list{
+            min-height: 270px;
+            @include respond-with-maxWidth ("medium"){
+                min-height: 0px;
+            }
+        }
+        .item{
+            width: 100%;
+            border: 2px solid white;
+            border-radius:     100%    ;
+            transition: all 0.5s            ;
+            &.slick-center{
+                transform: scale(1.6);
+            }
+        } 
+        .left-arrow{
+            position: absolute;
+            top: 50%;
+            left: -50px;
+            
+            @include respond-with-maxWidth ("medium"){
+                left: -30px;
+            }
+            @include respond-with-maxWidth ("large"){
+                left: -20px;
+            }
+        }
+        .right-arrow{
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            @include respond-with-maxWidth ("medium"){
+                right: -30px;
+            }
+            @include respond-with-maxWidth ("large"){
+                left: -20px;
+            }
+        }
+    }
+    .slick_content{
+        width: 90%;
+        margin: auto;
+        .slick-dots {
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            // margin-top: $mg-5;
+            padding: 0px;
+            width: auto;
+            li{
+                border-radius: 50%            ;
+                width: 16px;
+                height: 16px;
+                border: 2px solid $color-grey;
+                button::before{
+                    content:'';
+                }
+                &.slick-active{
+                    background: $color-grey !important;
+                }
+            }
+            transform: translateX(-50%);
+        }
+    }
+}
